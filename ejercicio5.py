@@ -4,6 +4,12 @@ def esPrimo(n : int) -> bool :
     """ Comprueba si un número es primo """
     raiz = int (math.sqrt(n))
     primo = True
+    if n <= 0 :
+        raise ValueError ("Error: el número debe ser mayor que cero")
+    
+    if n == 1:
+        return False
+    
     i = 2
     while (primo and i <= raiz) :
         if (n % i == 0) :
@@ -12,11 +18,14 @@ def esPrimo(n : int) -> bool :
     return primo
 
 def test_esPrimo() :
-    numeros = [3, 5, 6, 7, 8, 10, 11]
-    primo = [True, True, False, True, False, False, True]
+    numeros = [3, 5, 6, 7, 8, 10, 11, 0, 1, -5]
+    primo = [True, True, False, True, False, False, True, False, False, False]
     res = []
     for num in numeros:
-        res += [esPrimo(num)]
+        try:
+            res += [esPrimo(num)]
+        except ValueError:
+            res += [False]
     assert res == primo
 
 def test_benchmark_esPrimo_10 (benchmark):
