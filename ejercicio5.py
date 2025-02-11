@@ -12,16 +12,21 @@ def esPrimo(n : int) -> bool :
     return primo
 
 def test_esPrimo() :
-    assert (esPrimo(5)) == True
-    assert (esPrimo(8)) == False
-    assert (esPrimo(11)) == True
-    assert (esPrimo(15)) == False
+    numeros = [3, 5, 6, 7, 8, 10, 11]
+    primo = [True, True, False, True, False, False, True]
+    res = []
+    for num in numeros:
+        res += [esPrimo(num)]
+    assert res == primo
 
 def test_benchmark_esPrimo_10 (benchmark):
-    assert benchmark (esPrimo, 10) == False
+    res = benchmark(esPrimo, 10)
+    assert res == False
 
 def test_benchmark_esPrimo_7 (benchmark):
-    assert benchmark (esPrimo, 7) == True
+    res = benchmark(esPrimo, 7)
+    assert res == True
 
 def test_benchmark_esPrimo_12 (benchmark):
-    assert benchmark(esPrimo, 12) == False
+    res = benchmark(esPrimo, 12)
+    assert res == False

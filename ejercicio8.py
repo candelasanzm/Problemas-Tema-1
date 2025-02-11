@@ -8,13 +8,17 @@ def invertir(n):
     return inverso(n, 0)   
 
 def test_invertir() :
-    res = 726
-    res = 0
-    assert invertir(726) == 627
-    assert invertir(0) == 0
+    numeros = [726, 0, 23, 1, 5679]
+    num_invertido = [627, 0, 32, 1, 9765]
+    res = []
+    for num in numeros:
+        res += [invertir(num)]
+    assert res == num_invertido
 
 def test_benchmark_invertir_0 (benchmark) :
-    assert benchmark (invertir, 0) == 0
+    res = benchmark(invertir, 0)
+    assert res == 0
 
 def test_benchmark_invertir_5876 (benchmark): 
-    assert benchmark (invertir, 5876) == 6785
+    res = benchmark(invertir, 5876)
+    assert res == 6785
