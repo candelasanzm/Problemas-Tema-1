@@ -2,19 +2,20 @@ import math
 
 def esPrimo(n : int) -> bool :
     """ Comprueba si un número es primo """
-    raiz = int (math.sqrt(n))
-    primo = True
     if n <= 0 :
         raise ValueError ("Error: el número debe ser mayor que cero")
     
-    if n == 1:
+    elif n == 1:
         return False
     
-    i = 2
-    while (primo and i <= raiz) :
-        if (n % i == 0) :
-            primo = False
-        i += 1
+    else:
+        raiz = int (math.sqrt(n))
+        primo = True
+        i = 2
+        while (primo and i <= raiz) :
+            if (n % i == 0) :
+                primo = False
+            i += 1
     return primo
 
 def test_esPrimo() :
