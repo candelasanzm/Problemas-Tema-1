@@ -18,6 +18,17 @@ def esPrimo(n : int) -> bool :
             i += 1
     return primo
 
+# Casos de prueba
+esPrimo2 = esPrimo(2)
+esPrimo29 = esPrimo(29)
+esPrimo4 = esPrimo(4)
+esPrimo36 = esPrimo(36)
+print(esPrimo2)
+print(esPrimo29)
+print(esPrimo4)
+print(esPrimo36)
+
+# Test
 def test_esPrimo() :
     numeros = [3, 5, 6, 7, 8, 10, 11, 0, 1, -5]
     primo = [True, True, False, True, False, False, True, False, False, False]

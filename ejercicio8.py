@@ -7,6 +7,19 @@ def invertir(n):
             return inverso(n // 10, acc * 10 + n % 10)
     return inverso(n, 0)   
 
+# Casos de prueba
+invertir0 = invertir(0)
+invertir1 = invertir(1)
+invertir50 = invertir(50) # debería salir 5 porque el 0 de 05 no se pone
+invertir58 = invertir(58)
+invertir5908 = invertir(5908)
+print(invertir0)
+print(invertir1)
+print(invertir50)
+print(invertir58)
+print(invertir5908)
+
+# Test
 def test_invertir() :
     numeros = [726, 0, 23, 1, 5679]
     num_invertido = [627, 0, 32, 1, 9765]
